@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Fee Payment System</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f0f4f8;
+        }
+
+        header {
+            background: #075985;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+        }
+
+        .container {
+            max-width: 450px;
+            margin: 40px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px #0002;
+        }
+
+        h2 {
+            text-align: center;
+            color: #075985;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin-top: 7px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 22px;
+            padding: 13px;
+            background: #0284c7;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0369a1;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            color: #555;
+        }
+
+        @media (max-width: 500px) {
+            .container {
+                margin: 20px 15px;
+            }
+
+            header h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Online Fee Payment System</h1>
+        <p>Manage Your College Fee Easily</p>
+    </header>
+
+    <div class="container">
+        <h2>Student Fee Form</h2>
+
+        <form id="feeForm">
+            <label>Student Name</label>
+            <input type="text" placeholder="Enter student name" required>
+
+            <label>College ID</label>
+            <input type="text" placeholder="Enter college ID" required>
+
+            <label>Fee Amount (PKR)</label>
+            <input type="number" min="1" placeholder="Enter fee amount" required>
+
+            <label>Select Bank</label>
+            <select required>
+                <option value="">Choose your bank</option>
+                <option>Meezan Bank</option>
+                <option>HBL</option>
+                <option>UBL</option>
+                <option>MCB Bank</option>
+            </select>
+
+            <button type="submit">Submit Fee Details</button>
+        </form>
+
+        <p id="message" style="text-align:center;"></p>
+    </div>
+
+    <footer>
+        &copy; 2026 Online Fee Payment System
+    </footer>
+
+    <script>
+        document.getElementById("feeForm")
+            .addEventListener("submit", function(event) {
+                event.preventDefault();
+                document.getElementById("message").textContent =
+                    "Fee details submitted successfully! Payment is still pending.";
+            });
+    </script>
+
+</body>
+</html>
